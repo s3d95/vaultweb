@@ -1,0 +1,20 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#05070B"/>
+      <stop offset="1" stop-color="#0F1728"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#29D6FF"/>
+      <stop offset="1" stop-color="#905CFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="210" cy="120" r="170" fill="#29D6FF" fill-opacity="0.18"/>
+  <circle cx="980" cy="520" r="220" fill="#905CFF" fill-opacity="0.18"/>
+  <rect x="95" y="95" width="1010" height="440" rx="30" fill="#0D1624" fill-opacity="0.9" stroke="#22314A"/>
+  <rect x="130" y="145" width="940" height="3" fill="url(#line)"/>
+  <text x="130" y="280" fill="#D9ECFF" font-family="Segoe UI" font-size="78" font-weight="700">Saad Vault</text>
+  <text x="130" y="342" fill="#8DB3D8" font-family="Segoe UI" font-size="32">Precision-built tools. Engineered systems.</text>
+  <text x="130" y="420" fill="#29D6FF" font-family="Segoe UI" font-size="28" letter-spacing="3">SA3D95.XYZ</text>
+</svg>
