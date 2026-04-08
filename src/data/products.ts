@@ -88,6 +88,35 @@ export const products: Product[] = [
     downloadUrl: "https://mega.nz/file/s6MHxJzY#l5PAnKH--x8mJqiK_W88gV4dpRzzPjGUNZLt3KfIFI8",
     tags: ["steam", "accounts", "launcher", "management"],
   },
+  {
+  id: "4",
+  slug: "saad-snap",
+  name: "Saad Snap",
+  category: "Utility",
+  status: "Released",
+  version: "1.0.2",
+  platform: "Windows",
+  shortDescription:
+    "Fast and lightweight screen capture tool with a clean modern interface.",
+  fullDescription:
+    "SaadSnap is a minimal and efficient screen capture tool built for speed and simplicity. It allows users to quickly take screenshots, automatically save them, and access them instantly. Designed with a clean UI and smooth workflow, it focuses on delivering a seamless capture experience without unnecessary complexity.",
+  features: [
+    "Instant screenshot capture",
+    "Auto-save to organized folders",
+    "System tray integration",
+    "Open last screenshot quickly",
+    "Clean and modern UI",
+    "Lightweight and fast performance",
+  ],
+  image: "/images/tools/saad-snap/hero.png",
+  gallery: [
+    "/images/tools/saad-snap/shot-1.png",
+    "/images/tools/saad-snap/shot-2.png",
+    "/images/tools/saad-snap/shot-3.png",
+  ],
+  downloadUrl: "https://mega.nz/file/JvtRCADQ#9dlE8UjeKWw_RVgRHjFYpg9fDlLGTPwr9d7u-200c1E",
+  tags: ["screenshot", "capture", "screen", "tool", "windows"],
+},
 ];
 
 export const productCategories = [
