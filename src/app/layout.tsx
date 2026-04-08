@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
@@ -31,6 +32,14 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} min-h-screen bg-background text-foreground antialiased`}
       >
+        <Script
+          id="adsense-script"
+          async
+          strategy="afterInteractive"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3525357385323761"
+          crossOrigin="anonymous"
+        />
+
         <div className="relative">
           <div className="pointer-events-none fixed inset-0 -z-10 bg-grid-radial" />
           <div className="pointer-events-none fixed inset-0 -z-10 bg-[linear-gradient(rgba(64,196,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(64,196,255,0.035)_1px,transparent_1px)] bg-[size:52px_52px] [mask-image:radial-gradient(circle_at_center,black,transparent_78%)]" />
