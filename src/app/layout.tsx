@@ -27,25 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                var script = document.createElement('script');
-                script.async = true;
-                script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3525357385323761";
-                script.crossOrigin = "anonymous";
-                document.head.appendChild(script);
-              })();
-            `,
-          }}
-        />
-      </head>
-
       <body
         suppressHydrationWarning
-        className={\`\${spaceGrotesk.variable} \${jetbrainsMono.variable} min-h-screen bg-background text-foreground antialiased\`}
+        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} min-h-screen bg-background text-foreground antialiased`}
       >
         <div className="relative">
           <div className="pointer-events-none fixed inset-0 -z-10 bg-grid-radial" />
