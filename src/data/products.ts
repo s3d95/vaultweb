@@ -10,16 +10,16 @@ export const products: Product[] = [
     version: "1.0.0",
     platform: "Windows",
     shortDescription:
-      "One-click Windows optimization utility designed for fast and safe system cleanup.",
+      "A one-click tool that cleans up your Windows PC and helps it run faster.",
     fullDescription:
-      "Saad Boost is a precision-built Windows optimization tool focused on delivering immediate performance improvements through controlled system cleanup operations. It targets unnecessary temporary data, DNS cache, standby memory, and prefetch data, providing a streamlined and responsive system experience.",
+      "Saad Boost cleans up your Windows PC so it runs faster. With one click it clears out junk files, frees up memory, and resets the DNS cache — so your computer feels quick and responsive again.",
     features: [
-      "Clear standby memory",
-      "Flush DNS cache",
-      "Clean prefetch data",
-      "Remove temporary files",
-      "Safe one-click execution",
-      "Real-time operation log",
+      "Free up memory",
+      "Reset DNS cache",
+      "Clear cached data",
+      "Delete junk files",
+      "Safe one-click cleanup",
+      "See what it's doing live",
     ],
     image: "/images/tools/saad-boost/hero-v2.png",
     gallery: [
@@ -39,9 +39,9 @@ export const products: Product[] = [
     version: "1.0.0",
     platform: "Windows",
     shortDescription:
-      "Professional macro recorder and playback tool for automation workflows.",
+      "Record your clicks and keystrokes, then play them back to do repetitive tasks for you.",
     fullDescription:
-      "Saad Macro is a lightweight yet powerful macro recording system designed for productivity and automation. It enables recording user actions and replaying them with precision control over speed and repetition.",
+      "Saad Macro records what you do — your mouse clicks and key presses — and plays it back for you. Great for anything you do over and over. You choose how fast it runs and how many times it repeats.",
     features: [
       "Record user input",
       "Replay macros",
@@ -68,9 +68,9 @@ export const products: Product[] = [
     version: "1.0.0",
     platform: "Windows",
     shortDescription:
-      "Steam-focused account switch manager with premium UI and fast switching.",
+      "Switch between your Steam accounts quickly, with just one click.",
     fullDescription:
-      "Saad Switcher is a streamlined Steam account management tool built for fast and secure switching between multiple accounts. It provides a clean interface, quick actions, and optimized workflow for users managing multiple Steam profiles.",
+      "Saad Switcher makes it easy to manage several Steam accounts. Pick an account and switch to it in one click, all from a clean and simple screen.",
     features: [
       "Manage multiple accounts",
       "Quick switch system",
@@ -97,9 +97,9 @@ export const products: Product[] = [
   version: "1.0.2",
   platform: "Windows",
   shortDescription:
-    "Fast and lightweight screen capture tool with a clean modern interface.",
+    "A fast, simple way to take screenshots on your PC.",
   fullDescription:
-    "SaadSnap is a minimal and efficient screen capture tool built for speed and simplicity. It allows users to quickly take screenshots, automatically save them, and access them instantly. Designed with a clean UI and smooth workflow, it focuses on delivering a seamless capture experience without unnecessary complexity.",
+    "Saad Snap is a simple, fast way to take screenshots. Snap a shot and it saves automatically, so you can find it right away. Clean and easy — nothing complicated.",
   features: [
     "Instant screenshot capture",
     "Auto-save to organized folders",

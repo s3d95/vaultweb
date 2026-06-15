@@ -5,6 +5,12 @@ type LoadingSkeletonProps = {
 };
 
 export function LoadingSkeleton({ className }: LoadingSkeletonProps) {
-  return <div className={cn("animate-pulse rounded-xl bg-edge/60", className)} />;
+  return (
+    <div
+      className={cn(
+        "skeleton animate-shimmer rounded-2xl border border-white/[0.06]",
+        className
+      )}
+    />
+  );
 }
-

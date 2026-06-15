@@ -1,4 +1,4 @@
-import { ArrowRight, Binary, Boxes, TerminalSquare } from "lucide-react";
+import { ArrowRight, Binary, Boxes } from "lucide-react";
 import { FadeIn } from "@/components/motion/fade-in";
 import { PageContainer } from "@/components/layout/page-container";
 import { ActionLink } from "@/components/ui/action-link";
@@ -8,65 +8,63 @@ import { products } from "@/data/products";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
-  title: "Saad Vault | Software Catalog",
-  description: "Professional software catalog for Saad desktop applications.",
+  title: "Saad Vault | Saad's Programs",
+  description: "Browse and download Saad's Windows programs — simple, fast, and free.",
   path: "/",
 });
 
 export default function HomePage() {
   return (
-    <PageContainer className="pb-16 pt-10 sm:pt-14">
-      <section className="overflow-hidden rounded-2xl border border-edge bg-gradient-to-b from-surface/90 via-graphite/80 to-background/85 shadow-cyber">
-        <div className="border-b border-edge/70 px-6 py-3 sm:px-8">
-          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent/90">
-            initializing software vault... ready
-          </p>
-        </div>
-
-        <div className="grid gap-8 px-6 py-10 sm:px-8 lg:grid-cols-[1.25fr_0.9fr] lg:items-center">
+    <PageContainer className="pb-20 pt-16 sm:pt-24">
+      <section className="relative overflow-hidden">
+        <div className="relative grid gap-10 lg:grid-cols-[1.25fr_0.9fr] lg:items-center">
           <FadeIn>
-            <p className="mb-4 inline-flex items-center gap-2 rounded-md border border-accent/30 bg-accent/10 px-3 py-1 font-mono text-xs uppercase tracking-[0.14em] text-accent">
-              <TerminalSquare className="size-3.5" />
+            <span className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-white/[0.08] bg-white/[0.02] px-4 py-1.5 font-mono text-[0.72rem] uppercase tracking-[0.2em] text-dim">
+              <span className="size-1.5 animate-pulse rounded-full bg-white shadow-[0_0_10px_#fff]" />
               sa3d95.xyz
-            </p>
-            <h1 className="max-w-3xl text-4xl font-semibold uppercase leading-tight tracking-[0.08em] text-foreground sm:text-5xl">
+            </span>
+            <h1 className="chrome-text font-display text-5xl font-bold leading-[1.02] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
               Saad Vault
             </h1>
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-foreground/70 sm:text-base">
-              Dedicated software showcase platform for Saad desktop tools. Browse releases, inspect features, and open
-              external downloads.
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-dim sm:text-lg">
+              All of Saad&apos;s Windows programs in one place. Take a look, see what each one does, and download
+              whatever you need.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <ActionLink href="/tools">
-                Open Catalog
-                <ArrowRight className="size-4" />
-              </ActionLink>
-              <ActionLink href="https://sa3d95.online" external variant="secondary">
-                Main Website
-              </ActionLink>
+            <div className="mt-8 flex flex-wrap gap-2">
+              <div className="magnetic-wrap">
+                <ActionLink href="/tools" className="magnetic">
+                  See Programs
+                  <ArrowRight className="size-4" />
+                </ActionLink>
+              </div>
+              <div className="magnetic-wrap">
+                <ActionLink href="https://sa3d95.online" external variant="secondary" className="magnetic">
+                  Main Website
+                </ActionLink>
+              </div>
             </div>
           </FadeIn>
 
           <FadeIn delay={0.08}>
-            <div className="rounded-xl border border-edge bg-background/55 p-5">
-              <h2 className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-foreground/55">vault status</h2>
+            <div className="glass tilt-3d rounded-2xl border border-white/[0.08] bg-white/[0.035] p-6 shadow-cyber">
+              <h2 className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-dim">quick info</h2>
               <div className="space-y-3 text-sm">
-                <div className="flex items-center justify-between rounded-lg border border-edge bg-graphite/60 px-3 py-2">
-                  <span className="inline-flex items-center gap-2 text-foreground/65">
-                    <Boxes className="size-4 text-accent" />
-                    Total Tools
+                <div className="flex items-center justify-between rounded-xl border border-white/[0.07] bg-white/[0.02] px-3.5 py-2.5">
+                  <span className="inline-flex items-center gap-2 text-dim">
+                    <Boxes className="size-4 text-foreground" />
+                    Programs
                   </span>
                   <span className="font-mono text-foreground">{products.length}</span>
                 </div>
-                <div className="flex items-center justify-between rounded-lg border border-edge bg-graphite/60 px-3 py-2">
-                  <span className="inline-flex items-center gap-2 text-foreground/65">
-                    <Binary className="size-4 text-accent" />
-                    Platform
+                <div className="flex items-center justify-between rounded-xl border border-white/[0.07] bg-white/[0.02] px-3.5 py-2.5">
+                  <span className="inline-flex items-center gap-2 text-dim">
+                    <Binary className="size-4 text-foreground" />
+                    Works on
                   </span>
                   <span className="font-mono text-foreground">Windows</span>
                 </div>
-                <div className="rounded-lg border border-edge bg-graphite/60 px-3 py-2 font-mono text-xs uppercase tracking-[0.1em] text-foreground/60">
-                  downloads are served via external provider links
+                <div className="rounded-xl border border-white/[0.07] bg-white/[0.02] px-3.5 py-2.5 font-mono text-xs leading-relaxed text-faint">
+                  downloads open on an external link
                 </div>
               </div>
             </div>
@@ -74,14 +72,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mt-14">
+      <section className="mt-20">
         <SectionHeading
           eyebrow="Programs"
-          title="Current Releases"
-          description="All available software in the vault. Each card links to a detailed product page and external download."
+          title="Ready to Download"
+          description="Every program I've made. Click a card to see what it does and download it."
           action={
             <ActionLink href="/tools" variant="secondary">
-              Full Catalog
+              See All
+              <ArrowRight className="size-4" />
             </ActionLink>
           }
         />
@@ -90,4 +89,3 @@ export default function HomePage() {
     </PageContainer>
   );
 }
-

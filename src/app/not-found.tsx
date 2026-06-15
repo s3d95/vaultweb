@@ -1,21 +1,30 @@
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { PageContainer } from "@/components/layout/page-container";
 
 export default function NotFound() {
   return (
-    <PageContainer className="flex min-h-[60vh] flex-col items-center justify-center py-16 text-center">
-      <p className="mb-2 text-xs uppercase tracking-[0.2em] text-accent">404</p>
-      <h1 className="font-display text-4xl uppercase tracking-[0.12em] text-foreground">Page Not Found</h1>
-      <p className="mt-3 max-w-xl text-sm text-foreground/65 sm:text-base">
-        The requested resource does not exist in Saad Vault.
+    <PageContainer className="relative flex min-h-[70vh] flex-col items-center justify-center py-16 text-center">
+      <span
+        aria-hidden
+        className="pointer-events-none absolute select-none font-display text-[34vw] font-bold leading-none text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.04)]"
+      >
+        404
+      </span>
+      <p className="relative mb-3 font-mono text-xs uppercase tracking-[0.3em] text-dim">error 404</p>
+      <h1 className="chrome-text relative font-display text-4xl font-bold tracking-[-0.03em] sm:text-5xl">
+        Page Not Found
+      </h1>
+      <p className="relative mt-4 max-w-xl text-sm text-dim sm:text-base">
+        We couldn&apos;t find this page.
       </p>
       <Link
         href="/tools"
-        className="mt-6 rounded-xl border border-accent/70 bg-accent/20 px-4 py-2 text-sm font-medium text-accent transition hover:bg-accent/30"
+        className="relative mt-7 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black shadow-chrome transition-all duration-300 ease-chrome hover:-translate-y-0.5 hover:shadow-chrome-hover"
       >
-        Return to Tools
+        <ArrowLeft className="size-4" />
+        Back to Programs
       </Link>
     </PageContainer>
   );
 }
-

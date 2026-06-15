@@ -9,7 +9,7 @@ export function PillBadge({ text, className }: PillBadgeProps) {
   return (
     <span
       className={cn(
-        "inline-flex rounded-full border border-accent/35 bg-accent/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.14em] text-accent",
+        "inline-flex items-center rounded-full border border-white/15 bg-black/50 px-3 py-1 font-mono text-[0.68rem] uppercase tracking-[0.18em] text-foreground backdrop-blur",
         className
       )}
     >
@@ -17,4 +17,3 @@ export function PillBadge({ text, className }: PillBadgeProps) {
     </span>
   );
 }
-

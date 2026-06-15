@@ -15,12 +15,14 @@
     "next": "^15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwind-merge": "^3.3.0"
+    "tailwind-merge": "^3.3.0",
+    "three": "^0.160.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.5",
+    "@types/three": "^0.160.0",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.24.0",
     "eslint-config-next": "^15.2.4",

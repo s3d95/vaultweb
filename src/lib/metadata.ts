@@ -42,4 +42,4 @@ export function buildMetadata({
 }
 
 export const defaultDescription =
-  "Saad Vault is the premium software hub for precision-built Windows tools, launch-ready utilities, and productivity systems by Saad.";
+  "Saad Vault is a simple place to browse and download Saad's Windows programs.";

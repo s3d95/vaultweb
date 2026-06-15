@@ -12,6 +12,9 @@ type ToolsCatalogProps = {
   products: Product[];
 };
 
+const fieldClass =
+  "rounded-xl border border-white/[0.08] bg-white/[0.02] px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-white/40";
+
 export function ToolsCatalog({ products }: ToolsCatalogProps) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<(typeof productCategories)[number]>("All");
@@ -39,24 +42,24 @@ export function ToolsCatalog({ products }: ToolsCatalogProps) {
 
   return (
     <div className="space-y-8">
-      <div className="grid gap-4 rounded-xl border border-edge bg-graphite/65 p-4 md:grid-cols-[2fr_1fr_1fr_1fr]">
-        <label className="group flex items-center gap-2 rounded-md border border-edge bg-background/70 px-3 py-2 text-sm text-foreground/80 transition focus-within:border-accent/55">
-          <Search className="size-4 text-foreground/55 transition group-focus-within:text-accent" />
+      <div className="grid gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.02] p-4 md:grid-cols-[2fr_1fr_1fr_1fr]">
+        <label className="group flex items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.02] px-3 py-2.5 text-sm text-foreground/85 transition focus-within:border-white/40">
+          <Search className="size-4 text-dim transition group-focus-within:text-foreground" />
           <input
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search by name, tag, or description..."
-            className="w-full bg-transparent text-sm outline-none placeholder:text-foreground/45"
+            placeholder="Search programs..."
+            className="w-full bg-transparent text-sm outline-none placeholder:text-faint"
           />
         </label>
 
         <select
           value={category}
           onChange={(event) => setCategory(event.target.value as (typeof productCategories)[number])}
-          className="rounded-md border border-edge bg-background/70 px-3 py-2 text-sm text-foreground outline-none transition focus:border-accent/55"
+          className={fieldClass}
         >
           {productCategories.map((option) => (
-            <option key={option} value={option}>
+            <option key={option} value={option} className="bg-elevated">
               Category: {option}
             </option>
           ))}
@@ -65,24 +68,24 @@ export function ToolsCatalog({ products }: ToolsCatalogProps) {
         <select
           value={status}
           onChange={(event) => setStatus(event.target.value as (typeof productStatuses)[number])}
-          className="rounded-md border border-edge bg-background/70 px-3 py-2 text-sm text-foreground outline-none transition focus:border-accent/55"
+          className={fieldClass}
         >
           {productStatuses.map((option) => (
-            <option key={option} value={option}>
+            <option key={option} value={option} className="bg-elevated">
               Status: {option}
             </option>
           ))}
         </select>
 
-        <label className="flex items-center gap-2 rounded-md border border-edge bg-background/70 px-3 py-2 text-sm text-foreground/85">
-          <ArrowUpDown className="size-4 text-foreground/65" />
+        <label className="flex items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.02] px-3 py-2.5 text-sm text-foreground/85">
+          <ArrowUpDown className="size-4 text-dim" />
           <select
             value={sortBy}
             onChange={(event) => setSortBy(event.target.value as SortOption)}
             className="w-full bg-transparent outline-none"
           >
             {sortOptions.map((option) => (
-              <option key={option.value} value={option.value}>
+              <option key={option.value} value={option.value} className="bg-elevated">
                 {option.label}
               </option>
             ))}
@@ -90,12 +93,12 @@ export function ToolsCatalog({ products }: ToolsCatalogProps) {
         </label>
       </div>
 
-      <div className="rounded-md border border-edge/70 bg-background/40 px-3 py-2 font-mono text-xs uppercase tracking-[0.1em] text-foreground/58">
-        results: {filtered.length}
+      <div className="font-mono text-xs uppercase tracking-[0.15em] text-faint">
+        <span className="text-dim">{filtered.length}</span> result{filtered.length === 1 ? "" : "s"} found
       </div>
 
       {filtered.length > 0 ? (
-        <motion.div layout className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <motion.div layout className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {filtered.map((product) => (
             <motion.div key={product.id} layout transition={{ duration: 0.25 }}>
               <ToolCard product={product} />
@@ -103,9 +106,9 @@ export function ToolsCatalog({ products }: ToolsCatalogProps) {
           ))}
         </motion.div>
       ) : (
-        <div className="rounded-xl border border-edge bg-graphite/60 p-10 text-center">
-          <p className="font-display text-xl uppercase tracking-[0.1em] text-foreground">No matching tools found</p>
-          <p className="mt-3 text-sm text-foreground/65">Try a different query, category, or status filter.</p>
+        <div className="glass rounded-2xl border border-white/[0.08] bg-white/[0.02] p-12 text-center">
+          <p className="font-display text-xl font-bold tracking-[-0.02em] text-foreground">No programs found</p>
+          <p className="mt-3 text-sm text-dim">Try a different search or filter.</p>
         </div>
       )}
     </div>

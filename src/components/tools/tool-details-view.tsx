@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Download, Github, Layers, Monitor, ShieldCheck, Tag } from "lucide-react";
+import { ArrowLeft, Check, Download, Github, Layers, Monitor, Tag } from "lucide-react";
 import { ExternalAction } from "@/components/common/external-action";
 import { GlassCard } from "@/components/ui/glass-card";
 import { PillBadge } from "@/components/ui/pill-badge";
@@ -15,45 +15,47 @@ export function ToolDetailsView({ product }: ToolDetailsViewProps) {
     <div className="space-y-8">
       <Link
         href="/tools"
-        className="inline-flex items-center gap-2 rounded-md border border-edge bg-graphite/65 px-3 py-2 text-sm text-foreground/80 transition hover:border-accent/50 hover:text-accent"
+        className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.035] px-4 py-2 text-sm font-medium text-foreground/90 transition hover:border-white hover:bg-white/[0.06]"
       >
         <ArrowLeft className="size-4" />
         Back to Tools
       </Link>
 
       <GlassCard className="p-0">
-        <div className="border-b border-edge/70 px-5 py-3">
-          <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-foreground/55">
-            saad@vault:~$ open {product.slug}
-          </p>
+        <div className="border-b border-white/[0.06] px-5 py-3">
+          <p className="font-mono text-[11px] tracking-[0.16em] text-dim">{product.slug}</p>
         </div>
 
-        <div className="relative h-[300px] overflow-hidden border-b border-edge">
-          <Image src={product.image} alt={product.name} fill className="object-cover" priority />
+        <div className="relative h-[300px] overflow-hidden border-b border-white/[0.06]">
+          <Image src={product.image} alt={product.name} fill className="object-cover grayscale" priority />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
           <div className="absolute bottom-6 left-6 right-6">
             <div className="mb-3 flex flex-wrap items-center gap-2">
               <PillBadge text={product.status} />
-              <span className="rounded-full border border-edge bg-background/70 px-3 py-1 font-mono text-xs text-foreground/80">
+              <span className="rounded-full border border-white/15 bg-black/50 px-3 py-1 font-mono text-xs text-foreground backdrop-blur">
                 v{product.version}
               </span>
             </div>
-            <h1 className="text-3xl font-semibold uppercase tracking-[0.1em] text-foreground sm:text-4xl">{product.name}</h1>
-            <p className="mt-2 max-w-3xl text-sm text-foreground/75 sm:text-base">{product.shortDescription}</p>
+            <h1 className="font-display text-3xl font-bold tracking-[-0.03em] text-foreground sm:text-4xl">
+              {product.name}
+            </h1>
+            <p className="mt-2 max-w-3xl text-sm text-dim sm:text-base">{product.shortDescription}</p>
           </div>
         </div>
 
         <div className="grid gap-6 p-6 lg:grid-cols-[2fr_1fr]">
           <div>
-            <p className="text-sm leading-relaxed text-foreground/78 sm:text-base">{product.fullDescription}</p>
+            <p className="leading-relaxed text-foreground/80">{product.fullDescription}</p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               {product.features.map((feature) => (
                 <div
                   key={feature}
-                  className="flex items-center gap-2 rounded-lg border border-edge bg-background/45 px-3 py-2 text-sm text-foreground/88"
+                  className="flex items-center gap-2.5 rounded-xl border border-white/[0.07] bg-white/[0.02] px-3 py-2.5 text-sm text-foreground/85"
                 >
-                  <ShieldCheck className="size-4 text-accent" />
+                  <span className="inline-flex size-5 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/[0.06]">
+                    <Check className="size-3 text-foreground" />
+                  </span>
                   {feature}
                 </div>
               ))}
@@ -61,25 +63,25 @@ export function ToolDetailsView({ product }: ToolDetailsViewProps) {
           </div>
 
           <aside className="space-y-4">
-            <div className="rounded-xl border border-edge bg-background/55 p-4">
-              <h2 className="mb-3 font-mono text-xs uppercase tracking-[0.18em] text-foreground/60">Tool Specs</h2>
+            <div className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5">
+              <h2 className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-dim">Quick Info</h2>
               <dl className="space-y-3 text-sm">
                 <div className="flex items-center justify-between gap-3">
-                  <dt className="inline-flex items-center gap-2 text-foreground/65">
+                  <dt className="inline-flex items-center gap-2 text-dim">
                     <Layers className="size-4" />
                     Category
                   </dt>
                   <dd className="text-foreground">{product.category}</dd>
                 </div>
                 <div className="flex items-center justify-between gap-3">
-                  <dt className="inline-flex items-center gap-2 text-foreground/65">
+                  <dt className="inline-flex items-center gap-2 text-dim">
                     <Monitor className="size-4" />
                     Platform
                   </dt>
                   <dd className="text-foreground">{product.platform}</dd>
                 </div>
                 <div className="flex items-center justify-between gap-3">
-                  <dt className="inline-flex items-center gap-2 text-foreground/65">
+                  <dt className="inline-flex items-center gap-2 text-dim">
                     <Tag className="size-4" />
                     Version
                   </dt>
@@ -88,12 +90,12 @@ export function ToolDetailsView({ product }: ToolDetailsViewProps) {
               </dl>
             </div>
 
-            <div className="flex flex-wrap gap-2">
-              <ExternalAction href={product.downloadUrl} className="flex-1 min-w-44">
+            <div className="flex flex-wrap gap-2.5">
+              <ExternalAction href={product.downloadUrl} className="min-w-44 flex-1">
                 <Download className="size-4" />
                 Download
               </ExternalAction>
-              <ExternalAction href={product.githubUrl} variant="secondary" className="flex-1 min-w-44">
+              <ExternalAction href={product.githubUrl} variant="secondary" className="min-w-44 flex-1">
                 <Github className="size-4" />
                 GitHub
               </ExternalAction>
@@ -103,11 +105,19 @@ export function ToolDetailsView({ product }: ToolDetailsViewProps) {
       </GlassCard>
 
       <section>
-        <h2 className="mb-4 text-2xl font-semibold uppercase tracking-[0.08em] text-foreground">Screenshots Gallery</h2>
+        <h2 className="mb-5 font-display text-2xl font-bold tracking-[-0.02em] text-foreground">Screenshots</h2>
         <div className="grid gap-4 md:grid-cols-3">
           {product.gallery.map((shot) => (
-            <div key={shot} className="relative h-48 overflow-hidden rounded-xl border border-edge bg-graphite/65">
-              <Image src={shot} alt={`${product.name} screenshot`} fill className="object-cover transition hover:scale-105" />
+            <div
+              key={shot}
+              className="group relative h-48 overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.02]"
+            >
+              <Image
+                src={shot}
+                alt={`${product.name} screenshot`}
+                fill
+                className="object-cover grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
+              />
             </div>
           ))}
         </div>

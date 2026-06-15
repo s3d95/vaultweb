@@ -9,9 +9,9 @@ type ExternalActionProps = {
 };
 
 const variantClass = {
-  primary:
-    "border border-accent/70 bg-accent/20 text-accent hover:bg-accent/30 hover:shadow-[0_0_26px_rgba(41,214,255,0.32)]",
-  secondary: "border border-edge bg-graphite/80 text-foreground hover:border-accent/45 hover:text-accent",
+  primary: "bg-white text-black shadow-chrome hover:-translate-y-0.5 hover:shadow-chrome-hover",
+  secondary:
+    "border border-white/15 bg-white/[0.035] text-foreground hover:border-white hover:bg-white/[0.06]",
 } as const;
 
 export function ExternalAction({ href, children, className, variant = "primary" }: ExternalActionProps) {
@@ -25,7 +25,7 @@ export function ExternalAction({ href, children, className, variant = "primary" 
       target="_blank"
       rel="noreferrer"
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium uppercase tracking-[0.05em] transition",
+        "inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300 ease-chrome",
         variantClass[variant],
         className
       )}

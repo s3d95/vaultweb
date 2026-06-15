@@ -5,8 +5,8 @@ import { getAllProducts } from "@/lib/product-utils";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
-  title: "Saad Vault | Tools",
-  description: "Explore Saad software tools with live filters, categories, and release status.",
+  title: "Saad Vault | All Programs",
+  description: "Browse all of Saad's Windows programs. Search or filter to find what you want.",
   path: "/tools",
 });
 
@@ -14,16 +14,15 @@ export default function ToolsPage() {
   const products = getAllProducts();
 
   return (
-    <PageContainer className="pb-16 pt-10 sm:pt-14">
-      <div className="mb-6 rounded-xl border border-edge bg-graphite/50 p-3">
-        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent/85">
-          saad@vault:~$ list --products --released
-        </p>
+    <PageContainer className="pb-20 pt-14 sm:pt-20">
+      <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.02] px-4 py-1.5 font-mono text-[11px] tracking-[0.12em] text-dim">
+        <span className="size-1.5 rounded-full bg-white/70" />
+        all programs · ready to download
       </div>
       <SectionHeading
-        eyebrow="Software Catalog"
-        title="Program Library"
-        description="Professional catalog view for all vault applications. Filter by category/status and open each program profile."
+        eyebrow="Programs"
+        title="All Programs"
+        description="Everything I've made, in one list. Search or filter to find what you want, then click a program to see more."
       />
       <ToolsCatalog products={products} />
     </PageContainer>
